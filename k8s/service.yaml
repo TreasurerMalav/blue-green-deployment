@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     app: python-app
-    color: blue
+    color: green
   ports:
     - protocol: TCP
       port: 80            # Expose the Service on port 80
