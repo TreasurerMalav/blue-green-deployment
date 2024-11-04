@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-app-service
+  namespace: blue-green
+spec:
+  selector:
+    app: python-app
+    color: blue
+  ports:
+    - protocol: TCP
+      port: 80            # Expose the Service on port 80
+      targetPort: 5001    # Forward traffic to the container’s port 5000
+  type: NodePort          # Exposes the Service on a port on each node in the cluster

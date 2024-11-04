@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app-green
+  namespace: blue-green
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+      color: green
+  template:
+    metadata:
+      labels:
+        app: python-app
+        color: green
+    spec:
+      containers:
+      - name: python-app
+        image: python-app:green   # Local image name
+        imagePullPolicy: Never    # Tells Kubernetes to use the local image
+        ports:
+        - containerPort: 5001
