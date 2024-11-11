@@ -21,3 +21,6 @@ spec:
         imagePullPolicy: Never    # Tells Kubernetes to use the local image
         ports:
         - containerPort: 5001
+        resources:
+          requests:
+            cpu: 10m
